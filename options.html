@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Настройки прокси</title>
+  <style>
+    body { padding: 20px; font-family: Arial; max-width: 600px; margin: 0 auto; }
+    .section { margin-bottom: 20px; }
+    label { display: block; margin: 5px 0; }
+    input, select, textarea { width: 100%; padding: 5px; }
+    button { padding: 8px 16px; margin-top: 10px; }
+    textarea { height: 100px; }
+    .blacklist_section {
+    display: none;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="section">
+    <h2>Настройки прокси</h2>
+    <label>Хост: <input type="text" id="host"></label>
+    <label>Порт: <input type="number" id="port"></label>
+    <label>Тип: 
+      <select id="type">
+        <option value="http">HTTP</option>
+        <option value="https">HTTPS</option>
+        <option value="socks5">SOCKS5</option>
+      </select>
+    </label>
+    <label>Имя пользователя: <input type="text" id="username"></label>
+    <label>Пароль: <input type="password" id="password"></label>
+  </div>
+  <div class="section">
+    <h2>Белый список (без прокси)</h2>
+    <textarea id="whitelist" placeholder="example.com, *.example.com"></textarea>
+  </div>
+  <div class="blacklist_section">
+    <h2>Черный список (с прокси)</h2>
+    <textarea id="blacklist" placeholder="example.com, *.example.com"></textarea>
+  </div>
+  <button id="saveButton">Сохранить</button>
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Simple Proxy Switcher",
+  "version": "1.0",
+  "description": "Простое расширение для прокси с белым и черным списком",
+  "permissions": [
+    "proxy",
+    "storage",
+    "declarativeNetRequest",
+    "webRequest",
+    "webRequestAuthProvider",
+    "<all_urls>"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon128.png"
+  },
+  "icons":{
+    "128":"icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
