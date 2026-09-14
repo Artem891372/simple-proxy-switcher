@@ -37,3 +37,7 @@
 ## Примечания
 
 - Требуется Chrome/Chromium с поддержкой Manifest V3 и permission `proxy`
+
+## Лицензия
+
+MIT — см. [LICENSE](LICENSE).
